@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Prime Danışmanlık</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primeBlue: '#174CFA',
+                        primeGreen: '#10B981',
+                        primeDark: '#0f172a',
+                        primeNavy: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- ORİJİNAL LOGO GÖRSELİ -->
+                <a href="#anasayfa" class="flex items-center shrink-0 mr-8">
+                    <img src="theprime.png" alt="The Prime Danışmanlık Logo" class="h-12 w-auto object-contain">
+                </a>
+
+                <!-- MENÜ LİSTESİ -->
+                <nav class="hidden xl:flex items-center justify-between flex-grow ml-8 text-xs font-medium">
+                    <a href="#anasayfa" class="hover:text-primeGreen transition">Anasayfa</a>
+                    
+                    <!-- HİZMETLERİMİZ AÇILIR MENÜSÜ -->
+                    <div class="relative group py-2">
+                        <button class="flex items-center hover:text-primeGreen transition focus:outline-none font-semibold">
+                            Hizmetlerimiz
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-72 bg-white shadow-xl rounded-lg py-3 hidden group-hover:block border border-gray-100 max-h-96 overflow-y-auto">
+                            <a href="#saglik-turizmi" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Sağlık Turizmi (Ana Odak)</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">İhracat Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Bilişim Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Yatırım Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Sgk Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Ar-ge Ve Tasarım Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">AB Hibeleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Tubitak Teşvikleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Hizmet İhracat Destekleri</a>
+                            <a href="#hizmetlerimiz" class="block px-4 py-2 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">Marka Destekleri</a>
+                        </div>
+                    </div>
+
+                    <!-- DANIŞMANLIK -->
+                    <div id="danismanlik" class="relative group py-2">
+                        <button class="flex items-center hover:text-primeGreen transition focus:outline-none font-semibold">
+                            Danışmanlık
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-72 bg-white shadow-xl rounded-lg py-3 hidden group-hover:block border border-gray-100">
+                            <a href="#danismanlik" class="block px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">KVK UYUM DANIŞMANLIĞI</a>
+                            <a href="#danismanlik" class="block px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">TURQUALİTY DANIŞMANLIĞI</a>
+                            <a href="#danismanlik" class="block px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-primeGreen">FİNANS DANIŞMANLIĞI</a>
+                        </div>
+                    </div>
+
+                    <a href="#academy" class="hover:text-primeGreen transition">The Prime Academy</a>
+                    <a href="#kariyer" class="hover:text-primeGreen transition">Kariyer</a>
+                    <a href="#basinda-biz" class="hover:text-primeGreen transition">Basında Biz</a>
+                    <a href="#sss" class="hover:text-primeGreen transition">SSS</a>
+                    <a href="#dys" class="text-red-600 border border-red-200 px-3 py-1.5 rounded-full hover:bg-red-50 transition font-semibold">DYS Check-Up</a>
+                    <a href="#anasayfa" class="bg-primeGreen text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">İletişim</a>
+                </nav>
+
+                <!-- Mobil Menü Butonu -->
+                <div class="xl:hidden flex items-center space-x-3">
+                    <a href="#dys" class="text-xs text-red-600 border border-red-200 px-2.5 py-1 rounded-full">DYS</a>
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobil Açılır Menü -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t px-4 pt-2 pb-4 space-y-2 max-h-[80vh] overflow-y-auto">
+            <a href="#anasayfa" class="block py-2 hover:text-primeGreen">Anasayfa</a>
+            <a href="#saglik-turizmi" class="block py-2 hover:text-primeGreen font-semibold text-primeGreen">Sağlık Turizmi</a>
+            <a href="#hizmetlerimiz" class="block py-2 hover:text-primeGreen font-semibold">Diğer Hizmetlerimiz</a>
+            <a href="#danismanlik" class="block py-2 hover:text-primeGreen font-semibold">Danışmanlık</a>
+            <a href="#academy" class="block py-2 hover:text-primeGreen">The Prime Academy</a>
+            <a href="#kariyer" class="block py-2 hover:text-primeGreen">Kariyer</a>
+            <a href="#basinda-biz" class="block py-2 hover:text-primeGreen">Basında Biz</a>
+            <a href="#sss" class="block py-2 hover:text-primeGreen">SSS</a>
+            <a href="#anasayfa" class="block py-2 text-primeGreen font-semibold">İletişim</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- 1. ANA SAYFA -->
+        <section id="anasayfa" class="relative bg-white text-gray-900 h-[calc(100vh-5rem)] min-h-[650px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-15">
+                <div class="home-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="home-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="home-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7">
+                        <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">KURUMSAL ÇÖZÜM ORTAĞINIZ</span>
+                        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mt-4 mb-6 leading-tight text-gray-900">
+                            Devlet Destekleri ve <span class="text-primeGreen font-extrabold">Stratejik Danışmanlık</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed font-normal">
+                            <strong>The Prime Danışmanlık</strong> olarak; sizlere Devletimizin sunmuş olduğu tüm teşvikleri tek elden yararlanma kolaylığı sağlarken, en iyi uygulamalar ışığında verimliliğinize ve sürdürülebilir kârlılığınıza katkı sağlamayı hedefliyoruz.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#saglik-turizmi" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/30">Sağlık Turizmi Çözümleri</a>
+                            <a href="#academy" class="bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium px-8 py-3.5 rounded-xl transition border border-gray-300">The Prime Academy</a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="bg-primeNavy text-white rounded-3xl shadow-2xl p-6 sm:p-8 border border-white/10 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-primeGreen/10 rounded-full blur-2xl pointer-events-none"></div>
+                            
+                            <div class="mb-6">
+                                <span class="text-primeGreen font-bold text-xs uppercase tracking-widest bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">Hızlı Başvuru</span>
+                                <h3 class="text-xl font-bold mt-2 text-white">Hemen Sizi Arayalım</h3>
+                                <p class="text-gray-300 text-xs mt-1">Bilgilerinizi bırakın, uzman ekibimiz hemen dönüş sağlasın.</p>
+                            </div>
+
+                            <form action="#" method="POST" class="space-y-4">
+                                <div>
+                                    <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-300 mb-1">Ad Soyad</label>
+                                    <input type="text" required placeholder="Adınız Soyadınız" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-900 border border-white/15 focus:outline-none focus:ring-2 focus:ring-primeGreen text-xs text-white placeholder-gray-500">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-300 mb-1">Telefon</label>
+                                        <input type="tel" required placeholder="0532 000 00 00" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-900 border border-white/15 focus:outline-none focus:ring-2 focus:ring-primeGreen text-xs text-white placeholder-gray-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-300 mb-1">Gmail Adresi</label>
+                                        <input type="email" required placeholder="ornek@gmail.com" class="w-full px-3.5 py-2.5 rounded-xl bg-gray-900 border border-white/15 focus:outline-none focus:ring-2 focus:ring-primeGreen text-xs text-white placeholder-gray-500">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="w-full bg-primeGreen text-white font-semibold py-3 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-600/30 text-xs tracking-wide">
+                                    Talep Oluştur
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ANA ODAK: SAĞLIK TURİZMİ VE YETKİ BELGESİ -->
+        <section id="saglik-turizmi" class="relative bg-primeNavy text-white h-[calc(100vh-5rem)] min-h-[650px] flex items-center overflow-hidden border-t border-white/10">
+            
+            <div class="absolute inset-0 z-0 opacity-15">
+                <div class="saglik-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="saglik-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80');"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+                
+                <div class="saglik-content absolute inset-0 transition-opacity duration-1000 opacity-100 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">ANA ODAĞIMIZ • SAĞLIK TURİZMİ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Sağlık Turizmi Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Uluslararası hastaları kliniğinize ve hastanenize çekmeniz, global marka değerinizi artırmanız ve küresel ölçekte büyümeniz için sağlanan sektörel destekleri eksiksiz sunuyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Sağlık Turizmi Teşvikleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="saglik-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">ANA ODAĞIMIZ • BELGELENDİRME</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Uluslararası Sağlık Turizmi Yetki Belgesi</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Sağlık tesisinizin bakanlık onaylı uluslararası yetki belgesi alma süreçlerini eksiksiz yürütüyor, yasal uyumluluğunuzu güvence altına alarak global hasta kabul etmenizi sağlıyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80" alt="Uluslararası Sağlık Turizmi Yetki Belgesi" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. DİĞER HİZMETLERİMİZ -->
+        <section id="hizmetlerimiz" class="relative bg-primeNavy text-white h-[calc(100vh-5rem)] min-h-[650px] flex items-center overflow-hidden border-t border-white/10">
+            
+            <div class="absolute inset-0 z-0 opacity-15">
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="service-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1920&q=80');"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+                
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-100 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">İhracat Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Küresel pazarlara açılmanız, dış ticaret hacminizi büyületmeniz ve uluslararası rekabette öne geçmeniz için tüm ihracat desteklerini tek elden yönetiyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="İhracat Teşvikleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Bilişim Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Yazılım, teknoloji ve dijitalleşme projelerinizde devlet desteklerinden maksimum oranda yararlanarak teknogirişim hamlelerinizi hızlandırıyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=80" alt="Bilişim Teşvikleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Yatırım Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Yeni yatırımlarınızda vergi indirimleri, gümrük muafiyetleri ve finansman destekleriyle maliyetlerinizi düşürüp kârlılığınızı artırıyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="Yatırım Teşvikleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">SGK Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                İstihdam maliyetlerinizi optimize eden prime esas kazanç destekleri ve SGK prim teşvikleriyle şirketinizin operasyonel giderlerini hafifletiyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" alt="SGK Teşvikleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Ar-Ge ve Tasarım Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Yenilikçi projelerinizi ve tasarım faaliyetlerinizi vergi indirimleri, hibe ve fonlarla destekleyerek inovasyon gücünüzü zirveye taşıyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Ar-Ge" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">AB Hibeleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Avrupa Birliği fonları ve uluslararası fon programlarıyla stratejik projelerinize hibe desteği kazandırarak vizyonunuza ortak oluyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1000&q=80" alt="AB Hibeleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Tubitak Teşvikleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                TÜBİTAK proje yazımı, başvuru ve izleme süreçlerinde uzman kadromuzla yanınızda olarak akademik ve endüstriyel Ar-Ge fonlarını kazandırıyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="Tubitak" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Hizmet İhracat Destekleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Yazılım, mühendislik, eğitim ve danışmanlık gibi hizmet sektörlerinde faaliyet gösteren firmaların globalleşme hamlelerini destekliyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" alt="Hizmet İhracat" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">DİĞER HİZMETLERİMİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-white">Marka Destekleri</h2>
+                            <p class="text-lg text-gray-300 leading-relaxed font-normal">
+                                Markanızın uluslararası pazarlarda tescili, korunması ve global bir değere dönüşmesi için sağlanan kurumsal marka desteklerini yönetiyoruz.
+                            </p>
+                            <div class="mt-6"><a href="#anasayfa" class="bg-primeGreen text-white font-medium px-8 py-3.5 rounded-xl hover:bg-emerald-600 transition shadow-lg">Hemen Başvurun</a></div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-white/20 aspect-[4/3] w-full">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1000&q=80" alt="Marka Destekleri" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. DANIŞMANLIK BÖLÜMÜ -->
+        <section class="py-24 bg-gray-100 text-gray-900 relative overflow-hidden border-t border-gray-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">STRATEJİK UZMANLIK</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mt-4 mb-4 text-gray-900">Danışmanlık Çözümlerimiz</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">
+                        Geleceğin iş dünyasında yasal risklerden arınmış, global standartlarda ve finansal olarak güçlü bir yapı inşa edin.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-gray-300 bg-white">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-25 group-hover:scale-105 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+                        <div class="relative p-8 h-full flex flex-col justify-between min-h-[420px] z-10 text-white">
+                            <div>
+                                <span class="text-primeGreen font-bold text-xs uppercase tracking-widest bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">Hukuki Güvence</span>
+                                <h3 class="text-2xl font-bold mt-4 mb-3 text-white">KVKK Uyum Danışmanlığı</h3>
+                                <p class="text-gray-200 text-sm leading-relaxed font-light">
+                                    "Veri güvenliğinizi riske atmayın; kurumsal itibarınızı yasal kalkanla koruma altına alın."
+                                </p>
+                            </div>
+                            <div class="pt-6 border-t border-white/20 flex items-center justify-between">
+                                <span class="text-xs text-gray-300">Tam Uyum Süreci</span>
+                                <a href="#anasayfa" class="text-primeGreen font-semibold text-sm hover:underline flex items-center">İncele &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-gray-300 bg-white">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-25 group-hover:scale-105 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+                        <div class="relative p-8 h-full flex flex-col justify-between min-h-[420px] z-10 text-white">
+                            <div>
+                                <span class="text-primeGreen font-bold text-xs uppercase tracking-widest bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">Global Vizyon</span>
+                                <h3 class="text-2xl font-bold mt-4 mb-3 text-white">Turquality Danışmanlığı</h3>
+                                <p class="text-gray-200 text-sm leading-relaxed font-light">
+                                    "Yerel bir markadan, dünyaya hükmeden global bir dev dönüşüm hikayesi yazın."
+                                </p>
+                            </div>
+                            <div class="pt-6 border-t border-white/20 flex items-center justify-between">
+                                <span class="text-xs text-gray-300">Zirveye Adım Atın</span>
+                                <a href="#anasayfa" class="text-primeGreen font-semibold text-sm hover:underline flex items-center">İncele &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-gray-300 bg-white">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-25 group-hover:scale-105 transition duration-500" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+                        <div class="relative p-8 h-full flex flex-col justify-between min-h-[420px] z-10 text-white">
+                            <div>
+                                <span class="text-primeGreen font-bold text-xs uppercase tracking-widest bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">Stratejik Büyüme</span>
+                                <h3 class="text-2xl font-bold mt-4 mb-3 text-white">Finans Danışmanlığı</h3>
+                                <p class="text-gray-200 text-sm leading-relaxed font-light">
+                                    "Nakit akışınızı optimize edin, sermayenizi en doğru yatırımlarla katlayarak büyütün."
+                                </p>
+                            </div>
+                            <div class="pt-6 border-t border-white/20 flex items-center justify-between">
+                                <span class="text-xs text-gray-300">Sağlam Temeller</span>
+                                <a href="#anasayfa" class="text-primeGreen font-semibold text-sm hover:underline flex items-center">İncele &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. THE PRIME ACADEMY BÖLÜMÜ -->
+        <section id="academy" class="py-24 bg-primeNavy text-white border-t border-white/10 relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-20">
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80');"></div>
+            </div>
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primeGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center">
+                <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">EĞİTİM & İNOVASYON</span>
+                <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mt-4 mb-6 text-white">The Prime Academy</h2>
+                
+                <p class="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-10 font-normal">
+                    The Prime Academy, iş dünyasının dinamiklerine ayak uydurmak ve profesyonel yetkinliklerini artırmak isteyenler için kapsamlı eğitim programları sunar. Uzman kadromuz eşliğinde hazırlanan güncel içeriklerimiz; kurumsal gelişimden stratejik yönetim becerilerine kadar geniş bir yelpazeyi kapsar. Hem bireysel kariyerinizi zirveye taşımak hem de şirketinizin insan kaynağını güçlendirmek için en doğru adres burasıdır. Sizi geleceğe hazırlayan özel eğitim ekosistemimizle tanışmak için hemen akademi sitemizi ziyaret edin.
+                </p>
+
+                <div>
+                    <a href="https://theprimedanismanlik.com/academy/" target="_blank" class="inline-flex items-center justify-center bg-primeGreen text-white font-semibold px-8 py-4 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-600/30 text-sm tracking-wide">
+                        The Prime Academy Sitemize Git &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. KARİYER / İNSAN KAYNAKLARI BÖLÜMÜ -->
+        <section id="kariyer" class="py-24 bg-white text-gray-900 border-t border-gray-200 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden shadow-lg h-48 border border-gray-200">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Ekip Çalışması" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-lg h-64 border border-gray-200">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Staj ve İş Olanakları" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="rounded-2xl overflow-hidden shadow-lg h-64 border border-gray-200">
+                                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80" alt="Kariyer Fırsatları" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="rounded-2xl overflow-hidden shadow-lg h-48 border border-gray-200">
+                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Profesyonel Gelişim" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6">
+                        <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">BİZİMLE ÇALIŞIN</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-4 mb-6 text-gray-900">
+                            Kariyer ve Staj Fırsatları
+                        </h2>
+                        <p class="text-base text-gray-600 mb-6 leading-relaxed">
+                            The Prime Danışmanlık olarak dinamik, yenilikçi ve sürekli öğrenmeyi ilke edinmiş bir ekiple büyüyoruz. Yeteneklerinizi ortaya koyabileceğiniz, sektörel uzmanlığınızı zirveye taşıyacak profesyonel bir çalışma ortamı ve staj imkanları sunuyoruz.
+                        </p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center space-x-3 text-sm font-medium text-gray-700">
+                                <svg class="w-5 h-5 text-primeGreen shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Dönemsel ve uzun süreli staj programları</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm font-medium text-gray-700">
+                                <svg class="w-5 h-5 text-primeGreen shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Uzman kadro eşliğinde birebir mentorluk ve eğitimler</span>
+                            </div>
+                            <div class="flex items-center space-x-3 text-sm font-medium text-gray-700">
+                                <svg class="w-5 h-5 text-primeGreen shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span>Dinamik ve global vizyonlu kurumsal çalışma kültürü</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a href="https://theprimedanismanlik.com/basvuru/" target="_blank" class="inline-flex items-center justify-center bg-primeGreen text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/30 text-sm tracking-wide">
+                                Kariyer / İş / Staj Başvurusu &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. BASINDA BİZ (ESKİ KAYAN SLİDER YAPISI + KIRMIZI DETAY BUTONU) -->
+        <section id="basinda-biz" class="relative bg-gray-100 text-gray-900 h-[calc(100vh-5rem)] min-h-[650px] flex items-center overflow-hidden border-t border-gray-300">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <div class="basin-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1920&q=80');"></div>
+                <div class="basin-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80');"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+                
+                <!-- 1. Slayt: Salih Kutluk -->
+                <div class="basin-content absolute inset-0 transition-opacity duration-1000 opacity-100 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">BASINDA BİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-gray-900">Salih Kutluk</h2>
+                            <h3 class="text-xl sm:text-2xl text-primeGreen font-semibold mb-4">"Sağlık Turizminde Global Liderlik"</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed font-normal italic border-l-4 border-primeGreen pl-4 mb-6">
+                                "Sektördeki tecrübemiz ve güçlü bağlantılarımızla, Türkiye'nin sağlık turizmindeki potansiyelini dünyaya taşıyoruz. Müşterilerimize sadece bir teşvik danışmanlığı değil, küresel pazarda sürdürülebilir bir büyüme stratejisi sunuyoruz. Vizyonumuz, yerel değerlerimizi global bir güce dönüştürmektir."
+                            </p>
+                            <!-- Kırmızı Dikkat Çekici Detay Butonu -->
+                            <div>
+                                <a href="https://theprimedanismanlik.com/basinda-biz/" target="_blank" class="inline-flex items-center justify-center bg-red-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-red-700 transition shadow-lg shadow-red-600/30 text-xs tracking-wider uppercase">
+                                    Haberi İncele &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-300 aspect-[4/3] w-full">
+                                <img src="salihkutluk.png" onerror="this.src='https:https: https: //cdn.ankahaber.net/upload/Haber/209819/209819.jpeg'" alt="Salih Kutluk" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Slayt: Zehra Kutluk -->
+                <div class="basin-content absolute inset-0 transition-opacity duration-1000 opacity-0 flex items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                        <div class="lg:col-span-6">
+                            <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">BASINDA BİZ</span>
+                            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight mt-4 mb-4 text-gray-900">Zehra Kutluk</h2>
+                            <h3 class="text-xl sm:text-2xl text-primeGreen font-semibold mb-4">"Mevzuatta Kusursuz Güvence"</h3>
+                            <p class="text-lg text-gray-700 leading-relaxed font-normal italic border-l-4 border-primeGreen pl-4 mb-6">
+                                "Karmaşık teşvik süreçlerini ve zorlu yasal mevzuatları, markalarımız için kolay ve anlaşılır bir yol haritasına dönüştürüyoruz. Amacımız, işletmelerin bürokratik engellere takılmadan, devletin sunduğu tüm avantajlardan en yüksek verimle yararlanmasını sağlamaktır."
+                            </p>
+                            <!-- Kırmızı Dikkat Çekici Detay Butonu -->
+                            <div>
+                                <a href="https://theprimedanismanlik.com/basinda-biz/" target="_blank" class="inline-flex items-center justify-center bg-red-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-red-700 transition shadow-lg shadow-red-600/30 text-xs tracking-wider uppercase">
+                                    Haberi İncele &rarr;
+                                </a>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-6 hidden lg:block">
+                            <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-300 aspect-[4/3] w-full">
+                                <img src="zehra-kutluk.jpg" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80'" alt="Zehra Kutluk" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PARTNERLERİMİZ / REFERANSLARIMIZ (AKTİF KAYAN BANT) -->
+        <section class="py-16 bg-white border-t border-gray-200 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+                <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">GÜÇLÜ İŞ BİRLİKLERİ</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mt-3 text-gray-900">Partnerlerimiz</h2>
+                <p class="text-gray-600 text-sm sm:text-base mt-2">Sağlık turizmi ve danışmanlık süreçlerinde birlikte yürüdüğümüz değerli partnerlerimiz.</p>
+            </div>
+
+            <!-- Kayan Logolar Alanı -->
+            <div class="relative w-full overflow-hidden py-4">
+                <div class="animate-marquee flex items-center space-x-8">
+                    <!-- 1. Grup Partner Logoları -->
+                    <div class="flex items-center space-x-8 shrink-0">
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-800 text-sm">Selda Center</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-600 text-sm">MediCure</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-slate-700 text-sm">Turan & Turan</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-900 text-sm">Dentadent</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-600 text-sm">Renew Health</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-600 text-sm">Esteworld</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-500 text-sm">Attelia</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-cyan-600 text-sm">Dentspa</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-pink-600 text-sm">Sevil Smile</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-900 text-sm">Dr. Cinik</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-600 text-sm">Clinicexpert</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-800 text-sm">Başarı Hastanesi</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-700 text-sm">Antlara Dental</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-orange-600 text-sm">Plusclinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-700 text-sm">Class Hair</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-700 text-sm">Dr. Cahit Vural</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-indigo-700 text-sm">International Clinics</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-green-700 text-sm">MarkAsya</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-800 text-sm">Declinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-500 text-sm">Nivi Clinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-rose-600 text-sm">Este Future</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-sky-700 text-sm">Yaşam Hastanesi</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-purple-700 text-sm">A-Dent</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-800 text-sm">Panaf Medical</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-900 text-sm">Sercan Aslan</span></div>
+                    </div>
+                    <!-- 2. Grup (Döngünün kusursuz devam etmesi için birebir kopya) -->
+                    <div class="flex items-center space-x-8 shrink-0">
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-800 text-sm">Selda Center</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-600 text-sm">MediCure</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-slate-700 text-sm">Turan & Turan</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-900 text-sm">Dentadent</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-600 text-sm">Renew Health</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-600 text-sm">Esteworld</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-500 text-sm">Attelia</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-cyan-600 text-sm">Dentspa</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-pink-600 text-sm">Sevil Smile</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-900 text-sm">Dr. Cinik</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-red-600 text-sm">Clinicexpert</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-800 text-sm">Başarı Hastanesi</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-700 text-sm">Antlara Dental</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-orange-600 text-sm">Plusclinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-700 text-sm">Class Hair</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-700 text-sm">Dr. Cahit Vural</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-indigo-700 text-sm">International Clinics</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-green-700 text-sm">MarkAsya</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-gray-800 text-sm">Declinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-500 text-sm">Nivi Clinic</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-rose-600 text-sm">Este Future</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-sky-700 text-sm">Yaşam Hastanesi</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-purple-700 text-sm">A-Dent</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-teal-800 text-sm">Panaf Medical</span></div>
+                        <div class="bg-white border border-gray-200 px-6 py-4 rounded-xl shadow-sm flex items-center justify-center h-20 w-48"><span class="font-bold text-blue-900 text-sm">Sercan Aslan</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SSS (SAĞLIK TURİZMİNDE EN ÇOK SORULAN SORULAR) - LACİVERT ARKA PLAN -->
+        <section id="sss" class="py-24 bg-primeNavy text-white relative overflow-hidden border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+                
+                <!-- Başlık Alanı -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="bg-primeGreen text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider">SAĞLIK TURİZMİ DANIŞMANLIĞI</span>
+                    <h2 class="text-3xl sm:text-5xl font-bold tracking-tight mt-4 mb-4 text-white">Sağlık turizminde en çok sorulan sorular</h2>
+                    <p class="text-gray-300 text-base sm:text-lg">
+                        Sağlık turizmi alanında yatırım yapmak, acente kurmak veya mevcut sağlık kuruluşunu uluslararası hasta kabulüne uygun hale getirmek isteyen firmalar; mevzuat, teşvik, pazarlama, operasyon ve dijital görünürlük başlıklarında benzer sorularla karşı karşıya kalmaktadır.
+                    </p>
+                </div>
+
+                <!-- SSS Kartları Grid Yapısı -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    
+                    <!-- Kart 1 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Nasıl başlarım?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Yetki belgesi şartları, aracı kurum yapısı, TÜRSAB gerekliliği, uygun fiziki alan, personel yapısı ve yabancı dil kriterleri en çok sorulan başlangıç konularıdır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 2 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <span class="text-lg">$</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Hangi teşviklerden yararlanabilirim?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Reklam harcamaları, fuar katılımları, yurt dışı tanıtım giderleri, danışmanlık kalemleri ve belirli personel maliyetlerinin destek kapsamına girip girmediği en kritik başlıklardandır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 3 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Hangi pazara açılmalıyım?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Hedef ülke seçimi, hizmet bazlı pazar stratejisi, hasta edinme maliyeti ve sürdürülebilir büyüme için hangi coğrafyalarda konumlanılması gerektiği sıkça sorulur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 4 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Yasal riskler nelerdir?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Reklam sınırları, tanıtım dili, hasta memnuniyeti süreçleri, komplikasyon yönetimi ve danışmanlık firmasının sorumluluk alanı en hassas başlıklar arasında yer alır.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 5 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Tanıtımı nasıl yapmalıyım?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Web sitesinde hangi bilgilerin yer alabileceği, sosyal medya kullanım sınırları, içerik dili, performans reklamları ve marka konumlandırması hakkında yoğun danışmanlık talebi oluşur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kart 6 -->
+                    <div class="bg-gray-900 border border-white/15 rounded-2xl p-8 shadow-xl flex flex-col justify-between hover:border-primeGreen transition duration-300">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-primeGreen/10 flex items-center justify-center text-primeGreen font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Süreç nasıl büyütülür?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">
+                                Sağlık turizmini yalnızca başlatmak değil; sürdürülebilir, denetlenebilir ve yüksek dönüşüm üreten bir modele dönüştürmek isteyen firmalar ölçeklenme planını da baştan sormaktadır.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Alt CTA Banner -->
+                <div id="iletisim" class="bg-gradient-to-r from-gray-900 via-emerald-950/40 to-gray-900 border border-white/15 rounded-3xl p-10 text-center shadow-2xl relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-primeGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Sağlık turizmine güçlü ve uyumlu bir başlangıç yapın</h3>
+                    <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-light">
+                        The Prime Danışmanlık olarak; sağlık turizmine giriş, teşvik yönetimi, pazarlama planlaması ve mevzuata uyum süreçlerinde işletmelere stratejik yol haritası sunuyoruz.
+                    </p>
+                    <a href="#anasayfa" class="inline-flex items-center justify-center bg-primeGreen text-white font-semibold px-8 py-4 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-600/30 text-sm tracking-wide">
+                        Bizimle iletişime geçin &nearr;
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Kontrolleri -->
+    <script>
+        // Mobil Menü Toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Genel Slider Fonksiyonu (4 Saniye / 4000ms)
+        function initSliderGroup(slideClass, contentClass, intervalTime) {
+            const slides = document.querySelectorAll('.' + slideClass);
+            const contents = document.querySelectorAll('.' + contentClass);
+            if (slides.length === 0 || contents.length === 0) return;
+            let current = 0;
+
+            setInterval(() => {
+                slides[current].classList.remove('opacity-100');
+                slides[current].classList.add('opacity-0');
+                contents[current].classList.remove('opacity-100');
+                contents[current].classList.add('opacity-0');
+
+                current = (current + 1) % slides.length;
+
+                slides[current].classList.remove('opacity-0');
+                slides[current].classList.add('opacity-100');
+                contents[current].classList.remove('opacity-0');
+                contents[current].classList.add('opacity-100');
+            }, intervalTime);
+        }
+
+        // Ana Sayfa Slider (Sadece arkaplan)
+        function initHomeSlider(slideClass, intervalTime) {
+            const slides = document.querySelectorAll('.' + slideClass);
+            if (slides.length === 0) return;
+            let current = 0;
+
+            setInterval(() => {
+                slides[current].classList.remove('opacity-100');
+                slides[current].classList.add('opacity-0');
+
+                current = (current + 1) % slides.length;
+
+                slides[current].classList.remove('opacity-0');
+                slides[current].classList.add('opacity-100');
+            }, intervalTime);
+        }
+
+        initHomeSlider('home-slide', 2000);
+        initSliderGroup('saglik-slide', 'saglik-content', 4000);
+        initSliderGroup('service-slide', 'service-content', 4000);
+        initSliderGroup('basin-slide', 'basin-content', 4000);
+    </script>
+</body>
+</html>
